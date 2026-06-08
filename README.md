@@ -89,24 +89,25 @@ cargo run
 
 ### Class & Layer Diagram / クラス＆レイヤー構造図
 ```mermaid
-classDiagram
-    direction TB
-    class AppWindow {
-        +comp_list: ComponentState[]
-        +selected_idx: int
-        +active_drag_y: length
-        +active_drag_item: ComponentState
-        +cmd_reorder_dnd(int, length)
-    }
-    class CustomWidgetFrame {
-        +title: string
-        +is_selected: bool
-        +is_ghost: bool
-        +handle_clicked(int, length)
-    }
-    AppWindow "1" *-- "many" CustomWidgetFrame : Layer 1: Base List Layout (背面ループリスト)
-    AppWindow "1" *-- "0..1" CustomWidgetFrame : Layer 2: Floating Theatre Overlay (最前面浮遊シアター)
-    AppWindow "1" *-- "0..1" TouchArea : Layer 3: Full-Screen Input Shield (全画面透過ドラッグセンサー盾)
+graph TD
+    subgraph AppWindow [Slint UI: AppWindow 全体管理基盤]
+        direction TB
+        Layer3[レイヤー 3: Full-Screen Input Shield<br>全画面透過型ドラッグセンサー盾]
+        Layer2[レイヤー 2: Floating Theatre Overlay<br>最前面浮遊専用シアター]
+        Layer1[レイヤー 1: Base List Layout<br>背面ループパーツリスト]
+    end
+
+    subgraph CustomFrame [CustomWidgetFrame: 各パーツ構成]
+        Title[+ title: string]
+        Selected[+ is_selected: bool]
+        Ghost[+ is_ghost: bool]
+        Callback[+ handle_clicked(int, length)]
+    end
+
+    Layer3 -->|マウス移動距離を完全強奪| Layer2
+    Layer2 -->|移動モード中のみ実体化描画| AppWindow
+    Layer1 -->|通常時 & ゴースト空席お留守番| CustomFrame
+```
 ```
 
 ### D&D Lifecycle Sequence / D&Dライフサイクルシーケンス
