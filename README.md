@@ -13,8 +13,8 @@ A high-performance, responsive custom dashboard component base built with **Rust
 ## 👥 Author / 開発者情報
 
 - **Developer / 開発者**: Kenji Igarashi 👤
-- **GitHub**: [github.com/kenjiigarashi/dashboard-core](https://github.com/kenjiigarashi/dashboard-core-drag-drop)
-- **LinkedIn: [linkedin.com/in/kenjiigarashi](https://www.linkedin.com/in/kenjiigarashi)🔗
+- **GitHub**: [github.com/kenjiigarashi/dashboard-cor-drag-drop](https://github.com/kenjiigarashi/dashboard-core-drag-drop)
+- **LinkedIn**: [linkedin.com/in/kenjiigarashi](https://www.linkedin.com/in/kenjiigarashi)🔗
 - **Created / 始動日**: 2026-06-09
 
 ---
