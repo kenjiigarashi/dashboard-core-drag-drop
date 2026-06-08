@@ -98,16 +98,15 @@ graph TD
     end
 
     subgraph CustomFrame [CustomWidgetFrame: 各パーツ構成]
-        Title[+ title: string]
-        Selected[+ is_selected: bool]
-        Ghost[+ is_ghost: bool]
-        Callback[+ handle_clicked(int, length)]
+        Title["+ title: string"]
+        Selected["+ is_selected: bool"]
+        Ghost["+ is_ghost: bool"]
+        Callback["+ handle_clicked(int, length)"]
     end
 
     Layer3 -->|マウス移動距離を完全強奪| Layer2
     Layer2 -->|移動モード中のみ実体化描画| AppWindow
     Layer1 -->|通常時 & ゴースト空席お留守番| CustomFrame
-```
 ```
 
 ### D&D Lifecycle Sequence / D&Dライフサイクルシーケンス
