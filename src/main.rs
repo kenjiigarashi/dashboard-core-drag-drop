@@ -1,3 +1,26 @@
+/*
+ * ============================================================================
+ *  Project     : dashboard-core-drag-drop
+ *  Description : 可変オブジェクト型・動的ダッシュボード
+ *  Language    : Rust 🦀 & Slint (Declarative GUI UI v1.0+)
+ *  License     : MIT License
+ *  Author      : Kenji Igarashi
+ *  GitHub      : https://github.com/kenjiigarashi
+ *  LinkedIn    : https://www.linkedin.com/in/kenji-igarashi-123456789/
+ *  License     : MIT License
+ *  Created     : 2026-06-03
+ *  Updated     : 
+ * ============================================================================
+ *  [Notice]
+ *  本システム内に実装されている各機能（資産残高、時計、日付、経済指標など）の
+ *  内部ロジックは、フレームワークとしての挙動を検証するためのサンプル（モック）です。
+ *  用途に合わせて、独自の専門コンポーネントへ自由に入れ替えて拡張してください。
+ *  [Architectural Design Philosophy]
+ *  本システムは、Rustの安全性とSlintの宣言型UIを最大限に活かし、完全なステート駆動型で構築された
+ *  ダッシュボードフレームワークです。全てのUIコンポーネントは、共通の状態管理構造体(ComponentState)
+ *  として構築された、ステート駆動（宣言型UI）のカスタム基盤です。
+ * ===========================================================================
+ */
 use slint::Model;
 
 slint::slint! {
